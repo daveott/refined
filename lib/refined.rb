@@ -1,5 +1,6 @@
 module Refined
   autoload :ScopeChain, "refined/scope_chain"
+  autoload :Railtie, "refined/railtie"
 
   def self.extended(base)
     @@klass = base.to_s

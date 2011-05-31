@@ -23,7 +23,6 @@ class TestMigration < ActiveRecord::Migration
 end
 
 class Candidate < ActiveRecord::Base
-  extend Refined
   def self.status(value)
     where(status: value)
   end
