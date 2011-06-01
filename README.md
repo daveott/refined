@@ -65,5 +65,8 @@ And will chain those methods as `Candidate.status("pending").skill("advanced")` 
 
 ### TODO
 
+- Rails 2 support
+- Ruby 1.8 support
 - Multiple parameters
 - More AREL finder methods
+- Accessor methods for parameter values
