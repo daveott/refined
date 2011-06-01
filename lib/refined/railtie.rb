@@ -11,7 +11,7 @@ module Refined
 
   class Railtie
     def self.insert
-      ActiveRecord::Base.send(:extend, Refined)
+      ActiveRecord::Base.extend(Refined)
     end
   end
 end
