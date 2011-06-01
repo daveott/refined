@@ -24,15 +24,26 @@ describe Refined::ScopeChain do
     let(:scope_chain) { Refined::ScopeChain.new("Candidate", criteria) }
     subject { scope_chain.chain! }
 
-    let(:criteria) { { status: "pending" } }
-
     before do
+      Candidate.destroy_all
       Candidate.create(status: "pending")
       Candidate.create(status: "hired")
     end
 
-    it "scopes by the given criteria" do
-      subject.count.should == 1
+    context "with no criteria" do
+      let(:criteria) { {} }
+
+      it "returns all" do
+        subject.count.should == 2
+      end
+    end
+
+    context "with criteria" do
+      let(:criteria) { { status: "pending" } }
+
+      it "scopes by the given criteria" do
+        subject.count.should == 1
+      end
     end
   end
 

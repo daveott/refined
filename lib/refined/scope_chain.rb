@@ -18,6 +18,7 @@ class Refined::ScopeChain
   end
 
   def chain!
+    return constant_name.scoped unless criteria.present?
     criteria.inject(constant_name) do |model, (method, arg)|
       construct(method, arg)
       model.send(method, arg)
