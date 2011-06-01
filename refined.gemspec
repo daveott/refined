@@ -3,7 +3,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |s|
   s.name        = 'refined'
-  s.version     = '0.0.0'
+  s.version     = '0.0.1'
   s.summary     = "Refined!"
   s.description = "Refined scopes ActiveRecord collections automagicaly."
   s.authors     = ["Dave Ott"]
