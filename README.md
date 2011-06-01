@@ -21,7 +21,7 @@ Let's say you want to filter a list of candidates for hire by status and skill l
     class Candidate < ActiveRecord::Base; end
 
     controller Candidates < ApplicationController
-      expose(:candidates) { Candidate.refined(params[:filters] }
+      expose(:candidates) { Candidate.refined(params[:filters]) }
 
       def filter
         render :index
