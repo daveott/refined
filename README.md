@@ -1,4 +1,4 @@
-`refined` is a technique for chaining scopes (or class methods as it were. see (http://elabs.se/blog/24-scopes-are-obsolete/ "Scopes Are Obsolete") to facilitate easy filtering of ActiveRecord collections.
+`refined` is a technique for chaining scopes (or class methods as it were in rails (see http://elabs.se/blog/24-scopes-are-obsolete/ "Scopes Are Obsolete") to facilitate easy filtering of ActiveRecord collections.
 
 Installation
 ============
