@@ -55,11 +55,11 @@ Let's say you want to filter a list of candidates for hire by status and skill l
           - ["Name", "Status", "Skill"].each do |header|
             %th header
       %tbody
-          - candidates.each do |candidate|
-            %tr
-              %td= candidate.name
-              %td= candidate.status
-              %td= candidate.skill
+        - candidates.each do |candidate|
+          %tr
+            %td= candidate.name
+            %td= candidate.status
+            %td= candidate.skill
 
 The call to Candidate.refined(params[:filters]) will yield 2 class methods created on Candidate as such:
 
