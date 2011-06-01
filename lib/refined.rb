@@ -1,3 +1,5 @@
+require "refined/railtie"
+
 module Refined
   autoload :ScopeChain, "refined/scope_chain"
   autoload :Railtie, "refined/railtie"
