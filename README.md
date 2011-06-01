@@ -66,3 +66,4 @@ And will chain those methods as `Candidate.status("pending").skill("advanced")` 
 ### TODO
 
 - Multiple parameters
+- More AREL finder methods
