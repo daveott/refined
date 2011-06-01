@@ -4,13 +4,17 @@ $:.unshift lib unless $:.include?(lib)
 Gem::Specification.new do |s|
   s.name        = 'refined'
   s.version     = '0.0.0'
-  s.summary     = "Scopeless!"
-  s.description = "Refine scopes!"
+  s.summary     = "Refined!"
+  s.description = "Refined scopes ActiveRecord collections automagicaly."
   s.authors     = ["Dave Ott"]
   s.email       = 'daveott@daveott.net'
   s.files       = ["lib/refined.rb"]
   s.homepage    = 'http://rubygems.org/gems/refined'
 
+  s.files = Dir.glob("lib/**/*.rb") + %w(README.md)
+  s.rdoc_options = ["--charset=UTF-8"]
+  s.require_paths = ["lib"]
+  
   s.add_development_dependency 'activerecord'
   s.add_development_dependency 'activesupport'
   s.add_development_dependency 'rspec'
