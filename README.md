@@ -5,8 +5,7 @@ Installation
 
     gem install refined
 
-When used with Rails 3
------------------------
+### When used with Rails 3
 
 in a `Gemfile`:
 
@@ -15,8 +14,7 @@ in a `Gemfile`:
 Example Use
 ===========
 
-A Simple Scenario
------------------
+### A Simple Scenario
 
 Let's say you want to filter a list of candidates for hire by status and skill level. The code might look something like this.
 
@@ -63,9 +61,8 @@ The call to Candidate.refined(params[:filters]) will yield 2 class methods creat
       where(skill: arg)
     end
 
-And will chain those methods as `Candidate.status("pending").skill("advanced")`return the scoped collection of candidates.
+And will chain those methods as `Candidate.status("pending").skill("advanced")` returning the scoped collection of candidates.
 
-TODO
-====
+### TODO
 
 - Multiple parameters
