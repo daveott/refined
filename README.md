@@ -14,7 +14,17 @@ in a `Gemfile`:
 Example Use
 ===========
 
-### A Simple Scenario
+### Simple collection scoping
+
+This is not a super practical use but one could do:
+
+    Candidate.refined({status: "pending", skill: "advanced"})
+
+However that's not much shorter than:
+
+    Candidate.where("status = ? OR skill = ?", "pending", "advanced")
+
+### A Simple View Filter
 
 Let's say you want to filter a list of candidates for hire by status and skill level. The code might look something like this.
 
