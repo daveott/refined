@@ -12,10 +12,19 @@ describe Refined::ScopeChain do
 
     before { chain.construct(method_name, criteria) }
 
-    context "the method does not exist on the model" do
+    context "method does not exist on the model" do
       let(:method_name) { :skill_level }
+
       it "adds a class method to the model" do
         chain.constant_name.should respond_to(method_name)
+      end
+    end
+
+    context "attribute does not exist on the model" do
+      let(:method_name) { :foo }
+
+      it "does not create the scope" do
+        Candidate.should_not respond_to(:foo)
       end
     end
   end
@@ -44,6 +53,19 @@ describe Refined::ScopeChain do
       it "scopes by the given criteria" do
         subject.count.should == 1
       end
+    end
+  end
+
+  describe "#insert_method" do
+    let(:chain) { Refined::ScopeChain.new("Candidate") }
+    let(:criteria) { nil }
+    let(:method_name) { :skill_level }
+    let(:args) { [method_name, criteria] }
+
+    before { chain.send(:insert_method, *args) }
+
+    it "adds a class method to the model" do
+      chain.constant_name.should respond_to(method_name)
     end
   end
 

@@ -9,6 +9,7 @@ class TestMigration < ActiveRecord::Migration
   def self.up
     create_table :candidates, force: true do |t|
       t.string :status
+      t.string :skill_level
     end
 
     create_table :skills, force: true do |t|

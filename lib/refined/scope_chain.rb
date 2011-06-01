@@ -11,10 +11,9 @@ class Refined::ScopeChain
     @constant_name ||= name.constantize
   end
 
-  def construct(name, value)
-    constant_name.send :define_singleton_method, name do |arg|
-      where(name => value)
-    end unless constant_name.respond_to?(name)
+  def construct(attr, value)
+    return unless constant_name.attribute_method?(attr)
+    insert_method(attr, value) unless constant_name.respond_to?(attr)
   end
 
   def chain!
@@ -25,4 +24,10 @@ class Refined::ScopeChain
     end
   end
 
+  private
+  def insert_method(attr, value)
+    constant_name.send :define_singleton_method, attr do |arg|
+      where(attr => value)
+    end
+  end
 end
