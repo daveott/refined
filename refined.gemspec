@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.name        = 'refined'
   s.version     = '0.0.2'
   s.summary     = "Refined!"
-  s.description = "Refined scopes ActiveRecord collections automagicaly."
+  s.description = "Refined scopes ActiveRecord collections automagically."
   s.authors     = ["Dave Ott"]
   s.email       = 'daveott@daveott.net'
   s.files       = ["lib/refined.rb"]
